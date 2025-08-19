@@ -1,0 +1,334 @@
+:root {
+    --primary-color: #8B6B4D; /* Marron */
+    --secondary-color: #D2B48C; /* Beige */
+    --text-color: #5C4D3D; /* Marron foncé */
+    --bg-color: #F5F5DC; /* Beige clair */
+    --card-bg: #FFF8E7; /* Beige très clair */
+    --shadow: 0 5px 15px rgba(139, 107, 77, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.navbar {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 120px 0 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Q50,80 0,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(139, 107, 77, 0.1);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(139, 107, 77, 0.15);
+}
+
+.skill-badge {
+    background-color: var(--primary-color);
+    color: white;
+    margin: 5px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--primary-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 3px solid var(--bg-color);
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-info i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px 0;
+}
+
+.social-icons a {
+    color: black;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    padding: 80px 0;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.progress {
+    background-color: rgba(139, 107, 77, 0.1);
+    height: 8px;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+}
+
+/* ANIMATIONS */
+/* Entrée en fondu */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Glissement depuis la droite */
+@keyframes slideInRight {
+  from { 
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Glissement depuis le bas */
+@keyframes slideInUp {
+  from { 
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Effet de rebond */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
+/* Rotation subtile */
+@keyframes subtleRotate {
+  from { transform: rotate(-2deg); }
+  to { transform: rotate(2deg); }
+}
+
+/* Pulse pour les éléments importants */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* CLASSES D'ANIMATION */
+.animate-fade {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+.animate-bounce {
+  animation: bounce 1s ease;
+}
+
+.animate-rotate {
+  animation: subtleRotate 3s ease-in-out infinite alternate;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Effet au survol */
+.card-hover-effect:hover {
+  transform: translateY(-5px) rotate(1deg);
+  box-shadow: 0 15px 30px rgba(139, 107, 77, 0.2) !important;
+  transition: all 0.4s ease;
+}
+
+/* Barre de progression animée */
+.progress-bar {
+  transition: width 1.5s ease-in-out;
+}
+
+/* Icônes qui bougent */
+.icon-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Animation spécifique pour les headers de section */
+.section-header {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--primary-color);
+    transition: width 0.6s ease-out, left 0.6s ease-out;
+}
+
+.section-header.animate-in::after {
+    width: 50px;
+}
+
+@keyframes headerSlideIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.section-title {
+    display: inline-block;
+    animation: headerSlideIn 0.8s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.2s;
+}
+
+/* Variantes de délai pour les animations */
+.section-title.delay-1 { animation-delay: 0.3s; }
+.section-title.delay-2 { animation-delay: 0.4s; }
